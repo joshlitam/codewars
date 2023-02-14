@@ -1,42 +1,16 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/javascript
-6 kyu: Who likes it?
-You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. 
-We want to create the text that should be displayed next to such an item.
+/*codewar challenge for the day link: https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/javascript
+6 kyu: Find the Unique Number
+There is an array with some numbers. All numbers are equal except for one. Try to find it!
 
-Implement the function which takes an array containing the names of people that like an item. It must return the display 
-text as shown in the examples:
+findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+It’s guaranteed that array contains at least 3 numbers.
 
-Examples:
-[]                                -->  "no one likes this"
-["Peter"]                         -->  "Peter likes this"
-["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
-["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
-["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
-
-Note: For 4 or more names, the number in "and 2 others" simply increases.
+The tests contain some very huge arrays, so think about performance.
 */
 
-// use if statements to determine how many people like this
-function likes(names) {
-    let a = ""
-    switch (names.length) {
-      case 1:
-        a = `${names[0]} likes this`
-        break
-      case 2:
-        a = `${names[0]} and ${names[1]} like this`
-        break
-      case 3:
-        a = `${names[0]}, ${names[1]} and ${names[2]} like this`
-        break
-      case 4:
-        a = `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
-        break
-      default:
-        a = "no one likes this"
-    }
-    return a
-  }
+// Solution: Use filter with indexOf and lastIndexOf to find the unique number
+const findUniq = arr => arr.filter(num => arr.indexOf(num) == arr.lastIndexOf(num))[0]
 
 // application
-console.log(likes(['John', 'Mark', 'Joseph']))
+console.log(findUniq([0, 1, 0 ,0 ,0])) //expected result: 1
