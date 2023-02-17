@@ -1,11 +1,15 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/train/javascript   
-8 Kyu: Sort and Star
+/*codewar challenge for the day link: https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript
+8 Kyu: Abbreviate a Two Word Name
 
-You will be given a list of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
 
-The returned value must be a string, and have "***" between each of its letters.
+The output should be two capital letters with a dot separating them.
 
-You should not remove or add elements from/to the array.
+It should look like this:
+
+Sam Harris => S.H
+
+patrick feeney => P.F
 */
 
-const twoSort = str => str.sort()[0].split("").join("***")
+const abbrevName = str => str.split(" ").map(x => x[0].toUpperCase()).join(".")
