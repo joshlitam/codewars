@@ -1,12 +1,21 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/59b2963132779166d2001018/train/javascript
-7 Kyu: Multiply the strings in the array
-You received an array with two strings. Create a function that will return their product as a string. E.g.
+/*codewar challenge for the day link: https://www.codewars.com/kata/586efc2dcf7be0f217000619/train/javascript
+7 Kyu: String reverse slicing 101
 
-arrMultiply(['9','6']) should return '54'
+You'll be given a string of characters as an input. Complete the function that returns a list of strings: (a) in the reverse order of the original string, and (b) with each successive string starting one character further in from the end of the original string.
+
+Assume the original string is at least 3 characters long. Try to do this using slices and avoid converting the string to a list.
+
+Examples
+'123'   ==>  ['321', '21', '1']
+'abcde' ==>  ['edcba', 'dcba', 'cba', 'ba', 'a']
 */
 
-/* solution: use reduce function to multiply both numbers and convert it to string */
-const arrMultiply = arr => arr.reduce((acc, int) => +acc * +int, 1).toString()
-
-// application
-console.log(arrMultiply('2', '5')) //expected output: '10'
+function reverseSlice(str) {
+    let length = str.length
+    let arr = []
+    let newStr = str.split("").reverse().join("")
+    for (i = 0; i < str.length; i++) {
+      arr.push(newStr.slice(i))
+    }
+    return arr;
+  }
