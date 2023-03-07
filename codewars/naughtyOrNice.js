@@ -1,25 +1,24 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/586f6741c66d18c22800010a/train/javascript
-7 Kyu: Sum of Sequence
-Your task is to make function, which returns the sum of a sequence of integers.
+/*codewar challenge for the day link: https://www.codewars.com/kata/52a6b34e43c2484ac10000cd
+7 Kyu: Naughty or Nice
+Happy Holidays fellow Code Warriors!
+It's almost Christmas! That means Santa's making his list, and checking it twice. Unfortunately, elves accidentally mixed the Naughty and Nice list together! Santa needs your help to save Christmas!
 
-The sequence is defined by 3 non-negative values: begin, end, step (inclusive).
+Save Christmas!
+Santa needs you to write two functions. Both of the functions accept a sequence of objects. The first one returns a sequence containing only the names of the nice people, and the other returns a sequence containing only the names of the naughty people. Return an empty sequence [] if the result from either of the functions contains no names.
 
-If begin value is greater than the end, function should returns 0
-
-Examples
-
-2,2,2 --> 2
-2,6,2 --> 12 (2 + 4 + 6)
-1,5,1 --> 15 (1 + 2 + 3 + 4 + 5)
-1,5,3  --> 5 (1 + 4)
-
-
+The objects in the passed will represent people. Each object contains two properties: name and wasNice.
+name - The name of the person
+wasNice - True if the person was nice this year, false if they were naughty
 */
 
-const sequenceSum = (begin, end, step) => {
-  let num = 0
-  for (i = begin; i <= end; i += step) {
-    num += i
-  }
-  return num
-};
+function getNiceNames(people){
+  let nicePeople = people.filter(x => x.wasNice == true)
+  console.log(nicePeople)
+  return nicePeople.length > 0 ? nicePeople.map(x => x.name) : nicePeople
+}
+
+function getNaughtyNames(people){
+  let badPeople = people.filter(x => x.wasNice == false)
+  console.log(badPeople)
+  return badPeople.length > 0 ? badPeople.map(x => x.name) : badPeople
+}
