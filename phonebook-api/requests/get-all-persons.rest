@@ -1,0 +1,14 @@
+### request 1
+GET http://localhost:8000/api/persons
+
+### request 2
+GET http://localhost:8000/api/persons/2
+
+### request 3
+POST http://localhost:8000/api/persons
+Content-Type: application/json
+
+{
+    "name": "joshiposhi",
+    "number": "0917-876-1087"
+}

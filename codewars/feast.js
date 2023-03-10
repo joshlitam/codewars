@@ -1,15 +1,13 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript
-8 Kyu: Abbreviate a Two Word Name
+/*codewar challenge for the day link: https://www.codewars.com/kata/5aa736a455f906981800360d/train/javascript
+8 Kyu: Feast of Many Beasts
 
-Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
 
-The output should be two capital letters with a dot separating them.
+Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
 
-It should look like this:
-
-Sam Harris => S.H
-
-patrick feeney => P.F
+Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
 */
 
-const abbrevName = str => str.split(" ").map(x => x[0].toUpperCase()).join(".")
+function feast(beast, dish) {
+    return beast[0] == dish[0] && beast[beast.length-1] == dish[dish.length-1]
+  }
