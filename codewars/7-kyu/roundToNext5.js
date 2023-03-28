@@ -1,17 +1,24 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
-7 kyu: Mumbling
-This time no story, no theory. The examples below show you how to write function accum:
+/*codewar challenge for the day link: https://www.codewars.com/kata/55d1d6d5955ec6365400006d/train/javascript
+7 kyu: Round up to the next multiple of 5
+Given an integer as input, can you round it to the next (meaning, "greater than or equal") multiple of 5?
 
 Examples:
-accum("abcd") -> "A-Bb-Ccc-Dddd"
-accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-accum("cwAt") -> "C-Ww-Aaa-Tttt"
 
-The parameter of accum is a string which includes only letters from a..z and A..Z.
+input:    output:
+0    ->   0
+2    ->   5
+3    ->   5
+12   ->   15
+21   ->   25
+30   ->   30
+-2   ->   0
+-5   ->   -5
+etc.
+Input may be any positive or negative integer (including 0).
+
+You can assume that all inputs are valid integers.
 */
 
-// seperate characters in a string and repeat them based on index, joined by a hyphen
-const accum = s => s.split("").map((x, i) => (x.toUpperCase() + x.toLowerCase().repeat(i))).join("-")
-
-// application
-console.log(accum("AzmfasS"))
+function roundToNext5(n){
+    return Math.ceil(n/5) * 5
+  }
