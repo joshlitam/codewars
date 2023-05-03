@@ -1,15 +1,19 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript
-8 Kyu: Abbreviate a Two Word Name
+/*codewar challenge for the day link: https://www.codewars.com/kata/55ecd718f46fba02e5000029/train/javascript
+8 Kyu: What is between?
 
-Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
 
-The output should be two capital letters with a dot separating them.
+For example:
 
-It should look like this:
-
-Sam Harris => S.H
-
-patrick feeney => P.F
+a = 1
+b = 4
+--> [1, 2, 3, 4]
 */
 
-const abbrevName = str => str.split(" ").map(x => x[0].toUpperCase()).join(".")
+function between(a, b) {
+    let arr = []
+    for (i = a; i <= b; ++i) {
+      arr.push(i)
+    }
+    return arr
+  }
