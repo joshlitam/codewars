@@ -1,15 +1,26 @@
 /*codewar challenge for the day link: https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript
-8 Kyu: Abbreviate a Two Word Name
+8 Kyu: Grasshopper - Messi Goals
 
-Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+Messi's Goal Total
+Use variables to find the sum of the goals Messi scored in 3 competitions
 
-The output should be two capital letters with a dot separating them.
+Information
+Messi goal scoring statistics:
 
-It should look like this:
-
-Sam Harris => S.H
-
-patrick feeney => P.F
+Competition	Goals
+La Liga	43
+Champions League	10
+Copa del Rey	5
+Task
+Create these three variables and store the appropriate values using the table above:
+laLigaGoals
+championsLeagueGoals
+copaDelReyGoals
+Create a fourth variable named totalGoals that stores the sum of all of Messi's goals for this year.
 */
 
-const abbrevName = str => str.split(" ").map(x => x[0].toUpperCase()).join(".")
+var laLigaGoals = 43
+var championsLeagueGoals = 10
+var copaDelReyGoals = 5
+
+var totalGoals = laLigaGoals + championsLeagueGoals + copaDelReyGoals
