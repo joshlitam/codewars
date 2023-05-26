@@ -1,17 +1,13 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
-7 kyu: Mumbling
-This time no story, no theory. The examples below show you how to write function accum:
+/*codewar challenge for the day link: https://www.codewars.com/kata/544a54fd18b8e06d240005c0/train/javascript
+7 kyu: Smallest value of an array
+Write a function that can return the smallest value of an array or the index of that value. The function's 2nd parameter will tell whether it should return the value or the index.
 
-Examples:
-accum("abcd") -> "A-Bb-Ccc-Dddd"
-accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-accum("cwAt") -> "C-Ww-Aaa-Tttt"
+Assume the first parameter will always be an array filled with at least 1 number and no duplicates. Assume the second parameter will be a string holding one of two values: 'value' and 'index'.
 
-The parameter of accum is a string which includes only letters from a..z and A..Z.
+min([1,2,3,4,5], 'value') // => 1
+min([1,2,3,4,5], 'index') // => 0
 */
 
-// seperate characters in a string and repeat them based on index, joined by a hyphen
-const accum = s => s.split("").map((x, i) => (x.toUpperCase() + x.toLowerCase().repeat(i))).join("-")
-
-// application
-console.log(accum("AzmfasS"))
+function min(arr, toReturn) {
+    return toReturn === 'value' ? Math.min(...arr) : arr.indexOf(Math.min(...arr))
+  }
