@@ -1,17 +1,28 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
-7 kyu: Mumbling
-This time no story, no theory. The examples below show you how to write function accum:
+/*codewar challenge for the day link: https://www.codewars.com/kata/55b4f9906ac454650900007d/train/javascript
+7 kyu: String Chunk
+You should write a function that takes a string and a positive integer n, splits the string into parts of length n and returns them in an array. It is ok for the last element to have less than n characters.
+
+If n is not a number or not a valid size (> 0) (or is absent), you should return an empty array.
+
+If n is greater than the length of the string, you should return an array with the only element being the same string.
 
 Examples:
-accum("abcd") -> "A-Bb-Ccc-Dddd"
-accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-accum("cwAt") -> "C-Ww-Aaa-Tttt"
 
-The parameter of accum is a string which includes only letters from a..z and A..Z.
+stringChunk('codewars', 2) // ['co', 'de', 'wa', 'rs']
+stringChunk('thiskataeasy', 4) // ['this', 'kata', 'easy']
+stringChunk('hello world', 3) // ['hel', 'lo ', 'wor', 'ld']
+stringChunk('sunny day', 0) // []
 */
 
-// seperate characters in a string and repeat them based on index, joined by a hyphen
-const accum = s => s.split("").map((x, i) => (x.toUpperCase() + x.toLowerCase().repeat(i))).join("-")
-
-// application
-console.log(accum("AzmfasS"))
+function stringChunk(str, n) {
+    let output = []
+    let split = str.split("")
+    if (typeof n !== "number" || n <= 0) {
+      return []
+    } else {
+      while (split.length > 0) {
+      output.push(split.splice(0, n).join(""))
+      }
+      return output
+    }
+  }
