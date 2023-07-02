@@ -1,17 +1,15 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
-7 kyu: Mumbling
-This time no story, no theory. The examples below show you how to write function accum:
+/*codewar challenge for the day link: https://www.codewars.com/kata/52b74e0936d582d9210005ff/train/javascript
+7 kyu: esreveR gnirtS
+Create a function called reverse for the String prototype that will allow the following functionality:
 
-Examples:
-accum("abcd") -> "A-Bb-Ccc-Dddd"
-accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-accum("cwAt") -> "C-Ww-Aaa-Tttt"
-
-The parameter of accum is a string which includes only letters from a..z and A..Z.
+"String".reverse();// => returns "gnirtS"
+"Super awesome string".reverse();// => returns "gnirts emosewa repuS"
+The reverse function should NOT modify the original string.
 */
 
-// seperate characters in a string and repeat them based on index, joined by a hyphen
-const accum = s => s.split("").map((x, i) => (x.toUpperCase() + x.toLowerCase().repeat(i))).join("-")
-
-// application
-console.log(accum("AzmfasS"))
+//Create reverse function for the String prototype
+String.prototype.reverse = function() {
+    let output = []
+    this.split("").forEach(x => output.unshift(x))
+    return output.join("")
+  }
