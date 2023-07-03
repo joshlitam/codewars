@@ -1,15 +1,14 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript
-8 Kyu: Abbreviate a Two Word Name
+/*codewar challenge for the day link: https://www.codewars.com/kata/55cb632c1a5d7b3ad0000145/train/javascript
+8 Kyu: Keep up the hoop
 
-Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
 
-The output should be two capital letters with a dot separating them.
+Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
 
-It should look like this:
-
-Sam Harris => S.H
-
-patrick feeney => P.F
+If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+If he doesn't get 10 hoops, return the string "Keep at it until you get it".
 */
 
-const abbrevName = str => str.split(" ").map(x => x[0].toUpperCase()).join(".")
+function hoopCount (n) {
+    return n >= 10 ? 'Great, now move on to tricks' : 'Keep at it until you get it' 
+ }
