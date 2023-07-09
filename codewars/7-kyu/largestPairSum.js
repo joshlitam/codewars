@@ -1,17 +1,16 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/5667e8f4e3f572a8f2000039/train/javascript
-7 kyu: Mumbling
-This time no story, no theory. The examples below show you how to write function accum:
+/*codewar challenge for the day link: https://www.codewars.com/kata/556196a6091a7e7f58000018/train/javascript
+7 kyu: Largest pair sum in array
+Given a sequence of numbers, find the largest pair sum in the sequence.
 
-Examples:
-accum("abcd") -> "A-Bb-Ccc-Dddd"
-accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-accum("cwAt") -> "C-Ww-Aaa-Tttt"
+For example
 
-The parameter of accum is a string which includes only letters from a..z and A..Z.
+[10, 14, 2, 23, 19] -->  42 (= 23 + 19)
+[99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
+Input sequence contains minimum two elements and every element is an integer.
 */
 
-// seperate characters in a string and repeat them based on index, joined by a hyphen
-const accum = s => s.split("").map((x, i) => (x.toUpperCase() + x.toLowerCase().repeat(i))).join("-")
-
-// application
-console.log(accum("AzmfasS"))
+function largestPairSum (numbers) {
+    let num1 = Math.max(...numbers)
+    let num2 = numbers.indexOf(num1) == numbers.lastIndexOf(num1) ? Math.max(...numbers.filter(x => x !== num1)) : num1
+    return num1 + num2
+  }
