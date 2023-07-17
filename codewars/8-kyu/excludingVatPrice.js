@@ -1,15 +1,23 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/javascript
-8 Kyu: Abbreviate a Two Word Name
+/*codewar challenge for the day link: https://www.codewars.com/kata/5890d8bc9f0f422cf200006b/train/javascript
+8 Kyu: Calculate Price Excluding VAT
 
-Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+Write a function that calculates the original product price, without VAT.
 
-The output should be two capital letters with a dot separating them.
+Example
+If a product price is 200.00 and VAT is 15%, then the final product price (with VAT) is: 200.00 + 15% = 230.00
 
-It should look like this:
+Thus, if your function receives 230.00 as input, it should return 200.00
 
-Sam Harris => S.H
+Notes:
 
-patrick feeney => P.F
+VAT is always 15% for the purposes of this Kata.
+Round the result to 2 decimal places.
+If null value given then return -1
 */
 
-const abbrevName = str => str.split(" ").map(x => x[0].toUpperCase()).join(".")
+//return price without vat
+function excludingVatPrice(price){
+    // your code
+    let num = price / 1.15
+    return price == null ? -1 : +num.toFixed(2)
+  }
