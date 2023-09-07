@@ -1,5 +1,5 @@
-/*codewar challenge for the day link: https://www.codewars.com/kata/56a75b91688b49ad94000015/train/javascript
-7 kyu: https://www.codewars.com/kata/5680781b6b7c2be860000036/train/javascript
+/*codewar challenge for the day link: https://www.codewars.com/kata/5680781b6b7c2be860000036/train/javascript
+7 kyu: find ther vowels
 We want to know the index of the vowels in a given word, for example, there are two vowels in the word super (the second and fourth letters).
 
 So given a string "super", we should return a list of [2, 4].
